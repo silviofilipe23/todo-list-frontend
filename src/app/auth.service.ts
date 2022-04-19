@@ -11,14 +11,17 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private _registerUrl = 'http://localhost:3000/api/register';
+  private _serverUrl = 'http://localhost:3000/api';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
 
   registerUser(user: any) {
-    console.log('chegou aqui')
-    return this.http.post(this._registerUrl, user).pipe(catchError(this.error));
+    return this.http.post(`${this._serverUrl}/register`, user).pipe(catchError(this.error));
+  }
+
+  loginUser(user: any) {
+    return this.http.post(`${this._serverUrl}/login`, user).pipe(catchError(this.error));
   }
 
   error(error: HttpErrorResponse) {

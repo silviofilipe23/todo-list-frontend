@@ -10,10 +10,7 @@ import { AuthService } from '../auth.service';
 
 export class LoginComponent implements OnInit {
 
-  userData = {
-    email: '',
-    password: ''
-  };
+  userData: any = {};
 
   constructor(private _auth: AuthService) { }
 
@@ -21,4 +18,14 @@ export class LoginComponent implements OnInit {
     
   }
 
+  login() {
+
+    console.log(this.userData)
+    this._auth.loginUser(this.userData)
+    .subscribe({
+      next: (user: any) =>  {
+        console.log(user)
+      },
+    })
+  }
 }

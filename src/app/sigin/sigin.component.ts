@@ -9,10 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class SiginComponent implements OnInit {
 
-  userData = {
-    email: '',
-    password: ''
-  };
+  userData: any = {};
 
   constructor(private _auth: AuthService) { }
 
@@ -20,8 +17,7 @@ export class SiginComponent implements OnInit {
     
   }
 
-  registerUser(){
-    console.log(this.userData)
+  register(){
     this._auth.registerUser(this.userData)
       .subscribe({
         next: (user: any) =>  {
