@@ -13,13 +13,22 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { SiginComponent } from './sigin/sigin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SiginComponent
+    SiginComponent,
+    DashboardComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,12 @@ import { SiginComponent } from './sigin/sigin.component';
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatBottomSheetModule,
+    MatCheckboxModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
