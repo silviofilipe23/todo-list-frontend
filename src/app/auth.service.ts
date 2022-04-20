@@ -11,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private _serverUrl = 'http://localhost:3000/api';
+  private _serverUrl = 'http://localhost:3000/api/login';
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   loginUser(user: any) {
-    return this.http.post(`${this._serverUrl}/login`, user).pipe(catchError(this.error));
+    return this.http.post(`${this._serverUrl}/`, user).pipe(catchError(this.error));
   }
 
   error(error: HttpErrorResponse) {

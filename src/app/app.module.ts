@@ -21,6 +21,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { AuthService } from './auth.service';
+import { EventsService } from './events.service';
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     MatDialogModule
   ],
   providers: [ 
+    AuthService,
+    EventsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
